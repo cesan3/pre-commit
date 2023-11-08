@@ -32,7 +32,7 @@ def check_useless_excludes(config_file: str) -> int:
     config = load_config(config_file)
     filenames = git.get_all_files()
     classifier = Classifier.from_config(
-        filenames, config['files'], config['exclude'],
+        filenames, config['files'], config['exclude'], config['exclude_file_path'],
     )
     retv = 0
 
